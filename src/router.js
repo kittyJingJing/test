@@ -1,22 +1,27 @@
+import Vue from 'vue'
 import VueRouter from 'vue-router'
+Vue.use(VueRouter)
 
-// 导入对应的路由组件
-import HomeContainer from './components/tabbar/HomeContainer.vue'
-import MemberContainer from './components/tabbar/MemberContainer.vue'
-import ShopcarContainer from './components/tabbar/ShopcarContainer.vue'
-import SearchContainer from './components/tabbar/SearchContainer.vue'
-
-// 3. 创建路由对象
+import Home1Container from './components/layout/Home1Container.vue'
+import Member1Container from './components/layout/MemberContainer1.vue'
+import Search1Container from './components/layout/Search1Container.vue'
+import ShopCarContainer from './components/layout/ShopCar1Container.vue'
 var router = new VueRouter({
-  routes: [ // 配置路由规则
-    { path: '/', redirect: '/home' },
-    { path: '/home', component: HomeContainer },
-    { path: '/member', component: MemberContainer },
-    { path: '/shopcar', component: ShopcarContainer },
-    { path: '/search', component: SearchContainer }
-  ],
-  linkActiveClass: 'mui-active' // 覆盖默认的路由高亮的类，默认的类叫做 router-link-active
-})
+    routes: [{
+            path: '/home',
+            component: Home1Container
+        }, {
+            path: '/member',
+            component: Member1Container
+        }, {
+            path: '/search',
+            component: Search1Container
+        }, {
+            path: '/shopcar',
+            component: ShopCarContainer
+        }
 
-// 把路由对象暴露出去
+    ],
+    linkActiveClass: 'mui-active'
+})
 export default router
